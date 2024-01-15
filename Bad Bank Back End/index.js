@@ -2,9 +2,10 @@ var express = require("express");
 var app = express();
 var cors = require("cors");
 var dal = require("./dal.js");
-const e = require("express");
+const corsOptions = require("./corsOptions.js");
 
-app.use(cors());
+app.use(cors(corsOptions));
+app.use(express.json());
 
 // create user account
 app.get(
@@ -111,10 +112,10 @@ app.get("/account/all", function (req, res) {
     console.log(docs);
     res.send(docs);
   });
-
-  // dal.deleteUser("wsmabdulky@gmail.com");
 });
 
-var port = 3000;
-app.listen(port);
+var port = "3000";
+app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
+  console.log("Server is running.");
+});
 console.log("Running on port: " + port);

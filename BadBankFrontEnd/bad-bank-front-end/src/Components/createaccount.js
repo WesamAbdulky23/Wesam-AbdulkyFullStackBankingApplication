@@ -1,20 +1,16 @@
 import React from "react";
 import Card from "./Card";
 import host from "../Utils/host";
-import SignedInUser from "./signedInUser";
 import UserContext from "../usercontext";
-import NavBar from "./navbar";
 
 function CreateAccount() {
   const [show, setShow] = React.useState(true);
-  const [status, setStatus] = React.useState("");
 
   return (
     <>
       <Card
         bgcolor="primary"
         header="Create Account"
-        status={status}
         body={
           show ? (
             <CreateForm setShow={setShow} />
@@ -52,10 +48,6 @@ function CreateForm(props) {
   React.useEffect(() => {
     const isValidEmail = (email) => {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    };
-
-    const isValidAmount = (amount) => {
-      return amount > 0;
     };
 
     if (isValidEmail(email)) {

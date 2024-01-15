@@ -24,7 +24,7 @@ function AllData() {
     }
 
     fetchAllUsers();
-  }, []);
+  });
 
   const deleteUser = (email) => {
     fetch(`${host}/account/deleteUser/${email}`)

@@ -1,9 +1,5 @@
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "@firebase/auth";
+import { initializeApp } from "@firebase/app";
 import Card from "./Card";
 import React from "react";
 import UserContext from "../usercontext";
